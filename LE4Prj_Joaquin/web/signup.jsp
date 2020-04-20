@@ -5,11 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sign Up</title>
+        <center>
+            <h1><%out.println(getServletContext().getInitParameter("Header"));%> </h1>
+        </center>  
         <style>
 
             body {
@@ -25,18 +29,18 @@
         </style>
     </head>
     <body>
-        <form method="POST" action="Signup.do"
+        <form method="POST" action="registerServlet"
             <p>Create Username:</p>
-            <input type="text" name="uname">
+            <input type="text" name="username">
             
             <br>
             <br>
             <br>
 
             <label for="role">Choose a role:</label>
-            <select id="role" name="roles">
-                <option value="admin">Admin</option>
-                <option value="guest">Guest</option>
+            <select id="role" name="role">
+                <option value="Admin">Admin</option>
+                <option value="Guest">Guest</option>
             </select>
             
             <br>
@@ -44,9 +48,9 @@
          
             
             <p>Enter Password:</p>
-            <input type="password" name="pass">
+            <input type="password" name="password">
             <p>Confirm Password:</p>
-            <input type="password" name="conpass">
+            <input type="password" name="confirm_password">
 
             <br>
             <br>
@@ -57,4 +61,9 @@
 
         </form>
     </body>
+    <footer>  
+        <center><br/>
+            <p> Copyright: <%out.println(getServletContext().getInitParameter("Footer"));%> | Time Accessed : <%= new Date()%> </p>
+        </center>
+    </footer>   
 </html>

@@ -1,10 +1,11 @@
 <%-- 
     Document   : success
-    Created on : 04 21, 20, 3:29:26 AM
+    Created on : 04 21, 20, 1:54:40 AM
     Author     : Daphne Joaquin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +30,7 @@
     <body>
         <h1>Welcome:<%=request.getAttribute("username") %> </h1>
         <h1>Role:<%=request.getAttribute("role") %> </h1>
-        <form action="index.jsp">
+        <form action="login.jsp">
          <button type="submit">Back</button>
       </form>
     </body>
